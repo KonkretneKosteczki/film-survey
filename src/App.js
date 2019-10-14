@@ -37,6 +37,7 @@ class App extends React.Component {
     function getAnswers(username){
       return fetch(config.getAnswers(username))
         .then(res => res.json())
+        .then(scores => parent.setState({scores}))
     }
 
     Promise.all([getUserName(), getMovieList()])
