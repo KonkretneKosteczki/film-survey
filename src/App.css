@@ -1,22 +1,79 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.poster {
+    display: block;
+    margin: auto;
+    width: 50vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title {
+    font-size: 3.5vh;
 }
 
-.App-link {
-  color: #09d3ac;
+.sub-title {
+    font-size: 2.5vh;
+}
+
+.score-button-container {
+  padding: 0;
+  margin: 0;
+  width: calc(50vh + 2px); /*extra border*/
+  display: inline-block;
+}
+
+.long-button-container {
+  margin: auto;
+  width: calc(50vh + 2px); /*extra border*/
+}
+
+.button {
+    background: #2dabf9 linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 3vh;
+    padding: 2vh;
+    outline: none;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #263666;
+}
+
+.button:hover {
+    background: #0688fa linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+}
+
+.score-button {
+    width: 16.66%;
+}
+
+.answer-button {
+    width: 20vh;
+    margin: 0 !important;
+}
+
+.navigation {
+    /*width: 50px;*/
+    margin-right: 1vh;
+    margin-left: 1vh;
+}
+
+.navigation-container{
+    padding-left: 20vh; /*answer-button width*/
+}
+
+.long-score {
+    width: 100%;
+}
+
+.disabled {
+    background: gray !important;
+    cursor: default;
+}
+
+.answers > div:hover {
+    font-weight: bold;
+    cursor: pointer;
 }
