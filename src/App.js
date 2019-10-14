@@ -37,12 +37,21 @@ class App extends React.Component {
     function getAnswers(username){
       return fetch(config.getAnswers(username))
         .then(res => res.json())
-        .then(scores => parent.setState({scores}))
+        .then(scores => parent.setState({
+          scores: Object
+            .values(scores)
+            .map(score => {
+              const parsedScore = parseInt(score);
+              if (isNaN(parsedScore)) return null;
+              return parsedScore;
+            })
+        }))
     }
 
     Promise.all([getUserName(), getMovieList()])
       .then(([user, movies])=> {
-        window.cookie = `username=${user}`;
+        console.log(user);
+        document.cookie = `username=${user}`;
         parent.setState({user,movies})
       });
 
